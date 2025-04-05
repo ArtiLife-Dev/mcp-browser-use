@@ -27,7 +27,9 @@ dependencies = [
   "json-repair>=0.35.0",
   "langchain-mistralai>=0.2.6",
   "fastmcp>=0.4.1",
-  "browser-use==0.1.29",
+  "browser-use @ git+https://github.com/browser-use/browser-use.git@main",
+  "maincontentextractor>=0.0.4",
+  "pillow>=11.1.0",
 ]
 
 [build-system]
@@ -36,6 +38,9 @@ build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/mcp_server_browser_use"]
+
+[tool.hatch.metadata]
+allow-direct-references = true
 
 [project.scripts]
 mcp-server-browser-use = "mcp_server_browser_use.server:main"
