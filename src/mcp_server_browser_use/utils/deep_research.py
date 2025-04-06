@@ -20,6 +20,7 @@ from mcp_server_browser_use.agent.custom_prompts import (
     CustomSystemPrompt,
     CustomAgentMessagePrompt,
 )
+from browser_use.agent.prompts import SystemPrompt, AgentMessagePrompt
 from mcp_server_browser_use.controller.custom_controller import CustomController
 
 logger = logging.getLogger(__name__)
@@ -177,8 +178,7 @@ Provide your output as a JSON formatted list. Each item in the list must adhere 
                     add_infos=add_infos,
                     browser=browser,
                     use_vision=use_vision,
-                    system_prompt_class=CustomSystemPrompt,
-                    agent_prompt_class=CustomAgentMessagePrompt,
+                    agent_prompt_class=AgentMessagePrompt,
                     max_actions_per_step=5,
                     controller=controller,
                 )
